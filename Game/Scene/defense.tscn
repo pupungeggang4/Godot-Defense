@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=4 uid="uid://cnwmweaccuqk0"]
+
+[ext_resource type="TileSet" uid="uid://cnjgqukgltxva" path="res://Resource/tile_plains.tres" id="1_ic810"]
+[ext_resource type="Script" uid="uid://dnpvartfq3blf" path="res://Script/Thing/spawn.gd" id="2_4g4ur"]
+[ext_resource type="PackedScene" uid="uid://ctitte07h7p5q" path="res://Scene/wave_info.tscn" id="2_pwfxc"]
+[ext_resource type="Script" uid="uid://efqom7b0v1hx" path="res://Script/Thing/end.gd" id="3_sverw"]
+
+[node name="Defense" type="Node2D"]
+
+[node name="Field" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMapLayer" parent="Field"]
+tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAUAAAAAAAAAAAADAAYAAAABAAAAAAAEAAUAAAABAAAAAAADAAQAAAABAAAAAAAEAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAYAAAABAAAAAAAGAAUAAAABAAAAAAAHAAQAAAABAAAAAAAGAAMAAAABAAAAAAAHAAYAAAABAAAAAAAIAAUAAAABAAAAAAAIAAMAAAABAAAAAAAJAAQAAAABAAAAAAAJAAYAAAABAAAAAAAKAAUAAAABAAAAAAAKAAMAAAABAAAAAAALAAQAAAABAAAAAAALAAYAAAABAAAAAAAMAAUAAAABAAAAAAAMAAMAAAABAAAAAAAIAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAYAAAAAAAAAAAACAAUAAAABAAAAAAACAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAYAAAABAAAAAAACAAYAAAAAAAAAAAACAAQAAAAAAAAAAAANAAMAAAAAAAAAAAANAAUAAAAAAAAAAAA=")
+tile_set = ExtResource("1_ic810")
+
+[node name="EmptyTile" type="Node2D" parent="Field"]
+
+[node name="Unit" type="Node2D" parent="Field"]
+
+[node name="Spawn" type="Node2D" parent="Field"]
+script = ExtResource("2_4g4ur")
+
+[node name="End" type="Node2D" parent="Field"]
+script = ExtResource("3_sverw")
+
+[node name="Upper" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lower" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WaveInfo" parent="." instance=ExtResource("2_pwfxc")]
