@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3bchg64clwl0"]
+[gd_scene load_steps=3 format=3 uid="uid://c3bchg64clwl0"]
 
-[ext_resource type="Texture2D" uid="uid://wr5ko80x26g7" path="res://Image/SpawnPoint.png" id="1_rjvpi"]
+[ext_resource type="Script" uid="uid://cx7if5kgsv6px" path="res://Script/Thing/spawn_point.gd" id="1_2u675"]
+[ext_resource type="Texture2D" uid="uid://dhbb78gsrciaa" path="res://Image/SpawnPoint.png" id="1_rjvpi"]
 
 [node name="SpawnPoint" type="Node2D"]
+script = ExtResource("1_2u675")
 
 [node name="SpawnPoint" type="Sprite2D" parent="."]
 texture = ExtResource("1_rjvpi")
