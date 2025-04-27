@@ -1,6 +1,7 @@
 extends Node2D
 
-var side = 1
+@export var side = 1
+@export var speed = 20.0
 
 func _process(delta: float) -> void:
-    position.x -= 3.0
+    position.x -= speed * delta

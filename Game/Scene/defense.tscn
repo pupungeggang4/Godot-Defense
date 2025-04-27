@@ -1,20 +1,24 @@
-[gd_scene load_steps=9 format=4 uid="uid://cnwmweaccuqk0"]
+[gd_scene load_steps=11 format=4 uid="uid://cnwmweaccuqk0"]
 
+[ext_resource type="Script" uid="uid://7w5xy4igp0qr" path="res://Script/defense.gd" id="1_cbq7o"]
 [ext_resource type="Script" uid="uid://cuv7lq8uun5d4" path="res://Script/player.gd" id="1_cwaim"]
 [ext_resource type="TileSet" uid="uid://cnjgqukgltxva" path="res://Resource/tile_plains.tres" id="1_ic810"]
 [ext_resource type="Script" uid="uid://dnpvartfq3blf" path="res://Script/Thing/spawn.gd" id="2_4g4ur"]
 [ext_resource type="PackedScene" uid="uid://ctitte07h7p5q" path="res://Scene/wave_info.tscn" id="2_pwfxc"]
+[ext_resource type="Script" uid="uid://d1ht8sd758y37" path="res://Script/field.gd" id="3_1cx7a"]
 [ext_resource type="Script" uid="uid://efqom7b0v1hx" path="res://Script/Thing/end.gd" id="3_sverw"]
 [ext_resource type="PackedScene" uid="uid://b6ruovi8fj5b" path="res://Scene/Thing/unit.tscn" id="4_3uub6"]
 [ext_resource type="Texture2D" uid="uid://c74p7n5khs7e3" path="res://Image/ButtonMenu.png" id="6_7yvli"]
 [ext_resource type="PackedScene" uid="uid://cl6nna1rorqxy" path="res://Scene/lower.tscn" id="7_1hwwa"]
 
 [node name="Defense" type="Node2D"]
+script = ExtResource("1_cbq7o")
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_cwaim")
 
 [node name="Field" type="Node2D" parent="."]
+script = ExtResource("3_1cx7a")
 
 [node name="TileMap" type="TileMapLayer" parent="Field"]
 tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAUAAAAAAAAAAAADAAYAAAABAAAAAAAEAAUAAAABAAAAAAADAAQAAAABAAAAAAAEAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAYAAAABAAAAAAAGAAUAAAABAAAAAAAHAAQAAAABAAAAAAAGAAMAAAABAAAAAAAHAAYAAAABAAAAAAAIAAUAAAABAAAAAAAIAAMAAAABAAAAAAAJAAQAAAABAAAAAAAJAAYAAAABAAAAAAAKAAUAAAABAAAAAAAKAAMAAAABAAAAAAALAAQAAAABAAAAAAALAAYAAAABAAAAAAAMAAUAAAABAAAAAAAMAAMAAAABAAAAAAAIAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAYAAAAAAAAAAAACAAUAAAABAAAAAAACAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAYAAAABAAAAAAACAAYAAAAAAAAAAAACAAQAAAAAAAAAAAANAAMAAAAAAAAAAAANAAUAAAAAAAAAAAA=")
