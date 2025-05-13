@@ -17,14 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-UI="*res://Script/UIHandle/ui.gd"
-F="*res://Script/f.gd"
 GVar="*res://Script/g_var.gd"
+Func="*res://script/func.gd"
+UI="*res://script/UI.gd"
 
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=800
+window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [input]
