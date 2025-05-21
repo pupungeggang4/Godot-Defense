@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GVar="*res://Script/g_var.gd"
 Func="*res://script/func.gd"
 UI="*res://script/UI.gd"
+Save="*res://script/save.gd"
 
 [display]
 
