@@ -2,7 +2,7 @@ extends Node
 
 var title = {
     'button_start': [160, 160, 960, 80],
-    'button_erase': [160, 240, 960, 80]
+    'button_erase': [160, 320, 960, 80]
 }
 
 var level_select = {

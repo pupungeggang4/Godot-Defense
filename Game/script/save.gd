@@ -1,6 +1,18 @@
 extends Node
 
-const empty_save_data = {"1": [1, 2, 3]}
+const empty_save_data = {
+    'card': {},
+    'equipment': {},
+    'level': {
+        1: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        2: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        3: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        4: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        5: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        6: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        7: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    },
+}
 var data = {}
 
 func _ready() -> void:
@@ -18,7 +30,6 @@ func load_data() -> void:
         f = FileAccess.open('user://defense_save.txt', FileAccess.READ)
 
     data = JSON.parse_string(f.get_as_text())
-    print(data)
     f.close()
 
 func reset_data() -> void:
