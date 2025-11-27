@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dop0cdprgrdk8"]
+
+[ext_resource type="Script" uid="uid://cvba3hxcrwg3b" path="res://script/window/menu.gd" id="1_5te7a"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5te7a")
+
+[node name="MenuRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 520.0
+
+[node name="ButtonResume" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 280.0
+offset_right = 960.0
+offset_bottom = 360.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonExit" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 360.0
+offset_right = 960.0
+offset_bottom = 440.0
+
+[node name="ButtonQuit" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 440.0
+offset_right = 960.0
+offset_bottom = 520.0
+color = Color(1, 1, 0, 1)
+
+[connection signal="gui_input" from="ButtonResume" to="." method="_on_button_resume_gui_input"]
+[connection signal="gui_input" from="ButtonExit" to="." method="_on_button_exit_gui_input"]
+[connection signal="gui_input" from="ButtonQuit" to="." method="_on_button_quit_gui_input"]

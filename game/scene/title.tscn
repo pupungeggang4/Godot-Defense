@@ -7,8 +7,37 @@ script = ExtResource("1_4fdtc")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="UI"]
+[node name="ButtonStart" type="ColorRect" parent="UI"]
 offset_left = 160.0
 offset_top = 160.0
 offset_right = 1120.0
+offset_bottom = 240.0
+
+[node name="ButtonTutorial" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 240.0
+offset_right = 1120.0
+offset_bottom = 320.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonErase" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 1120.0
+offset_bottom = 400.0
+
+[node name="ButtonCollection" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 400.0
+offset_right = 1120.0
+offset_bottom = 480.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonExit" type="ColorRect" parent="UI"]
+offset_left = 160.0
+offset_top = 480.0
+offset_right = 1120.0
 offset_bottom = 560.0
+
+[connection signal="gui_input" from="UI/ButtonStart" to="." method="_on_button_start_gui_input"]
+[connection signal="gui_input" from="UI/ButtonExit" to="." method="_on_button_exit_gui_input"]
