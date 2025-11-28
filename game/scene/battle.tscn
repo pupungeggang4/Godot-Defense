@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://42qn7qxl13pj"]
+[gd_scene load_steps=8 format=4 uid="uid://42qn7qxl13pj"]
 
 [ext_resource type="PackedScene" uid="uid://dop0cdprgrdk8" path="res://scene/window/menu.tscn" id="1_afp2b"]
 [ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="1_soyo5"]
 [ext_resource type="Script" uid="uid://moy1x0aqqixc" path="res://script/scene/battle_handler.gd" id="2_0okv5"]
 [ext_resource type="TileSet" uid="uid://g5wo5xivwj85" path="res://res/tile_plain.tres" id="3_0okv5"]
+[ext_resource type="Script" uid="uid://bkre408c0dcpo" path="res://script/thing/tile_map.gd" id="4_6qw66"]
 [ext_resource type="Script" uid="uid://d2ldkbwk77wwg" path="res://script/thing/endpoint.gd" id="4_q27o7"]
 [ext_resource type="Script" uid="uid://dmqsvr708nuck" path="res://script/thing/spawn.gd" id="5_6qw66"]
 
@@ -21,6 +22,7 @@ scale = Vector2(1.25, 1.25)
 [node name="TileMapLayer" type="TileMapLayer" parent="Field"]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAABAAAAAAABAAAAAAABAAAAAAABAAEAAAAAAAAAAAABAAIAAAABAAAAAAABAAMAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAACAAIAAAAAAAAAAAACAAMAAAABAAAAAAADAAAAAAABAAAAAAADAAEAAAAAAAAAAAADAAIAAAABAAAAAAADAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAFAAMAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAABAAAAAAAHAAAAAAABAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAABAAAAAAAHAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAABAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAAAAAABAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAABAAAAAAAJAAMAAAAAAAAAAAA=")
 tile_set = ExtResource("3_0okv5")
+script = ExtResource("4_6qw66")
 
 [node name="Endpoint" type="Node2D" parent="Field"]
 script = ExtResource("4_q27o7")
