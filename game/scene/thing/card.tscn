@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcph3ejxkjte0"]
+
+[ext_resource type="Script" uid="uid://cfhwtjjb7qoei" path="res://script/thing/card.gd" id="1_qbiym"]
+
+[sub_resource type="Gradient" id="Gradient_0gcen"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qbiym"]
+gradient = SubResource("Gradient_0gcen")
+width = 120
+height = 120
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_qbiym")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_qbiym")
+centered = false
+
+[node name="TextEnergy" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

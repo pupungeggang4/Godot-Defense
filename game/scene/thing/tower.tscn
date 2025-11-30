@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cqn4lvpqh83e6"]
+
+[node name="Tower" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HPBar" type="ColorRect" parent="."]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = -30.0
+color = Color(0, 1, 0, 1)
