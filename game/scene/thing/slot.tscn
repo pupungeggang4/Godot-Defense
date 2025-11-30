@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://kb6ne1lk13co"]
+
+[ext_resource type="Script" uid="uid://crsu6o72s0bam" path="res://script/thing/slot.gd" id="1_ct6eu"]
+
+[sub_resource type="Gradient" id="Gradient_ct6eu"]
+colors = PackedColorArray(0.49803922, 0.49803922, 0.49803922, 1, 0.49803922, 0.49803922, 0.49803922, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vl8og"]
+gradient = SubResource("Gradient_ct6eu")
+
+[node name="Slot" type="Node2D"]
+script = ExtResource("1_ct6eu")
+
+[node name="SpriteReload" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_vl8og")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 120, 120)

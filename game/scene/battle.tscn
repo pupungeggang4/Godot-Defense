@@ -1,53 +1,79 @@
-[gd_scene load_steps=11 format=4 uid="uid://42qn7qxl13pj"]
+[gd_scene load_steps=14 format=4 uid="uid://42qn7qxl13pj"]
 
-[ext_resource type="PackedScene" uid="uid://dop0cdprgrdk8" path="res://scene/window/menu.tscn" id="1_afp2b"]
-[ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="1_soyo5"]
-[ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="2_0okv5"]
-[ext_resource type="TileSet" uid="uid://g5wo5xivwj85" path="res://res/tile_plain.tres" id="3_0okv5"]
-[ext_resource type="Script" uid="uid://bkre408c0dcpo" path="res://script/thing/tile_map.gd" id="4_6qw66"]
-[ext_resource type="Script" uid="uid://d2ldkbwk77wwg" path="res://script/thing/endpoint.gd" id="4_q27o7"]
-[ext_resource type="Script" uid="uid://dmqsvr708nuck" path="res://script/thing/spawn.gd" id="5_6qw66"]
-[ext_resource type="Texture2D" uid="uid://b1rjtimabjc4b" path="res://image/menu.png" id="7_p56j5"]
-[ext_resource type="PackedScene" uid="uid://djy77lxil3qom" path="res://scene/thing/button_upgrade.tscn" id="8_bdn7b"]
-[ext_resource type="PackedScene" uid="uid://dcph3ejxkjte0" path="res://scene/thing/card.tscn" id="9_ougy3"]
+[ext_resource type="TileSet" uid="uid://g5wo5xivwj85" path="res://res/tile_plain.tres" id="1_afp2b"]
+[ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="1_ebedk"]
+[ext_resource type="Script" uid="uid://moy1x0aqqixc" path="res://script/scene/battle_handler.gd" id="2_q27o7"]
+[ext_resource type="Script" uid="uid://dmqsvr708nuck" path="res://script/thing/spawn.gd" id="2_soyo5"]
+[ext_resource type="Script" uid="uid://d2ldkbwk77wwg" path="res://script/thing/endpoint.gd" id="3_0okv5"]
+[ext_resource type="Texture2D" uid="uid://b1rjtimabjc4b" path="res://image/menu.png" id="4_0okv5"]
+[ext_resource type="PackedScene" uid="uid://djy77lxil3qom" path="res://scene/thing/button_upgrade.tscn" id="6_ougy3"]
+[ext_resource type="PackedScene" uid="uid://dcph3ejxkjte0" path="res://scene/thing/card.tscn" id="6_p56j5"]
+[ext_resource type="Script" uid="uid://c25oqncscjtya" path="res://script/thing/player.gd" id="6_yyook"]
+[ext_resource type="PackedScene" uid="uid://dop0cdprgrdk8" path="res://scene/window/menu.tscn" id="7_6qw66"]
+[ext_resource type="PackedScene" uid="uid://kb6ne1lk13co" path="res://scene/thing/slot.tscn" id="7_bdn7b"]
+[ext_resource type="Script" uid="uid://ndm6rd6aqx3o" path="res://script/window/ui_lower.gd" id="11_5mh2w"]
+[ext_resource type="Theme" uid="uid://rrlgsc4app54" path="res://res/font_neodgm.tres" id="12_o18kk"]
 
 [node name="Battle" type="Node2D"]
-script = ExtResource("1_soyo5")
+script = ExtResource("1_ebedk")
 
 [node name="BattleHandler" type="Node" parent="."]
-script = ExtResource("2_0okv5")
+script = ExtResource("2_q27o7")
 
 [node name="Field" type="Node2D" parent="."]
-texture_filter = 1
-position = Vector2(140, 120)
+position = Vector2(120, 120)
 scale = Vector2(1.25, 1.25)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Field"]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAABAAAAAAABAAAAAAABAAAAAAABAAEAAAAAAAAAAAABAAIAAAABAAAAAAABAAMAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAACAAIAAAAAAAAAAAACAAMAAAABAAAAAAADAAAAAAABAAAAAAADAAEAAAAAAAAAAAADAAIAAAABAAAAAAADAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAFAAMAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAABAAAAAAAHAAAAAAABAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAABAAAAAAAHAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAABAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAAAAAABAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAABAAAAAAAJAAMAAAAAAAAAAAA=")
-tile_set = ExtResource("3_0okv5")
-script = ExtResource("4_6qw66")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAAAAAAACAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAAAAAAAAAAAAAABAAMAAAAAAAAAAAABAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAEAAAAAAAAAAAAAAAMAAAABAAAAAAABAAIAAAABAAAAAAAAAAEAAAABAAAAAAABAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAAAAAABAAAAAAAEAAEAAAABAAAAAAAEAAMAAAABAAAAAAAFAAIAAAABAAAAAAAFAAAAAAABAAAAAAAGAAEAAAABAAAAAAAGAAMAAAABAAAAAAAHAAIAAAABAAAAAAAHAAAAAAABAAAAAAAIAAEAAAABAAAAAAAIAAMAAAABAAAAAAAJAAIAAAABAAAAAAAJAAAAAAABAAAAAAA=")
+tile_set = ExtResource("1_afp2b")
 
-[node name="Endpoint" type="Node2D" parent="Field"]
-script = ExtResource("4_q27o7")
+[node name="Unit" type="Node2D" parent="Field"]
 
 [node name="Spawn" type="Node2D" parent="Field"]
-script = ExtResource("5_6qw66")
+script = ExtResource("2_soyo5")
+
+[node name="End" type="Node2D" parent="Field"]
+script = ExtResource("3_0okv5")
 
 [node name="Player" type="Node2D" parent="."]
+script = ExtResource("6_yyook")
+
+[node name="ButtonUpgrade" parent="Player" instance=ExtResource("6_ougy3")]
+position = Vector2(20, 580)
 
 [node name="Hand" type="Node2D" parent="Player"]
 
-[node name="Card2" parent="Player/Hand" instance=ExtResource("9_ougy3")]
-position = Vector2(20, 580)
+[node name="Slot" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
+position = Vector2(376.0182, 682.92126)
 
-[node name="Card3" parent="Player/Hand" instance=ExtResource("9_ougy3")]
-position = Vector2(20, 580)
+[node name="Slot2" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
+position = Vector2(376.0182, 682.92126)
 
-[node name="Card4" parent="Player/Hand" instance=ExtResource("9_ougy3")]
-position = Vector2(20, 580)
+[node name="Slot3" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
+position = Vector2(376.0182, 682.92126)
 
-[node name="ButtonUpgrade" parent="Player" instance=ExtResource("8_bdn7b")]
-position = Vector2(20, 580)
+[node name="Slot4" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
+position = Vector2(376.0182, 682.92126)
+
+[node name="Slot5" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
+position = Vector2(376.0182, 682.92126)
+
+[node name="Slot6" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
+position = Vector2(376.0182, 682.92126)
+
+[node name="Deck" type="Node2D" parent="Player"]
+visible = false
+
+[node name="Card" parent="Player/Deck" instance=ExtResource("6_p56j5")]
+
+[node name="Card2" parent="Player/Deck" instance=ExtResource("6_p56j5")]
+
+[node name="Card3" parent="Player/Deck" instance=ExtResource("6_p56j5")]
+
+[node name="Card4" parent="Player/Deck" instance=ExtResource("6_p56j5")]
+
+[node name="Card5" parent="Player/Deck" instance=ExtResource("6_p56j5")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -56,9 +82,36 @@ offset_left = 1180.0
 offset_top = 20.0
 offset_right = 1260.0
 offset_bottom = 100.0
-texture = ExtResource("7_p56j5")
+texture = ExtResource("4_0okv5")
 
-[node name="Menu" parent="UI" instance=ExtResource("1_afp2b")]
+[node name="UILower" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_5mh2w")
+
+[node name="TextLevel" type="Label" parent="UI/UILower"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 540.0
+offset_right = 60.0
+offset_bottom = 572.0
+theme = ExtResource("12_o18kk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Lv.1"
+
+[node name="TextEnergy" type="Label" parent="UI/UILower"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 540.0
+offset_right = 200.0
+offset_bottom = 563.0
+theme = ExtResource("12_o18kk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0.0/0.0"
+
+[node name="Menu" parent="UI" instance=ExtResource("7_6qw66")]
 visible = false
 
 [connection signal="gui_input" from="UI/ButtonMenu" to="BattleHandler" method="_on_button_menu_gui_input"]

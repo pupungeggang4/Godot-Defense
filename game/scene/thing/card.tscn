@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcph3ejxkjte0"]
+[gd_scene load_steps=5 format=3 uid="uid://dcph3ejxkjte0"]
 
 [ext_resource type="Script" uid="uid://cfhwtjjb7qoei" path="res://script/thing/card.gd" id="1_qbiym"]
+[ext_resource type="Theme" uid="uid://rrlgsc4app54" path="res://res/font_neodgm.tres" id="2_xpy3r"]
 
 [sub_resource type="Gradient" id="Gradient_0gcen"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -18,5 +19,10 @@ texture = SubResource("GradientTexture2D_qbiym")
 centered = false
 
 [node name="TextEnergy" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 36.0
+theme = ExtResource("2_xpy3r")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2"

@@ -1,64 +1,46 @@
-[gd_scene load_steps=11 format=4 uid="uid://dop0cdprgrdk8"]
+[gd_scene load_steps=2 format=3 uid="uid://dop0cdprgrdk8"]
 
-[ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="1_cemns"]
-[ext_resource type="Script" uid="uid://moy1x0aqqixc" path="res://script/scene/battle_handler.gd" id="2_8ijx4"]
-[ext_resource type="TileSet" uid="uid://g5wo5xivwj85" path="res://res/tile_plain.tres" id="3_rqpln"]
-[ext_resource type="Script" uid="uid://bkre408c0dcpo" path="res://script/thing/tile_map.gd" id="4_f01hf"]
-[ext_resource type="Script" uid="uid://d2ldkbwk77wwg" path="res://script/thing/endpoint.gd" id="5_1j3ci"]
-[ext_resource type="Script" uid="uid://dmqsvr708nuck" path="res://script/thing/spawn.gd" id="6_jmskp"]
-[ext_resource type="PackedScene" uid="uid://dcph3ejxkjte0" path="res://scene/thing/card.tscn" id="7_rkhxc"]
-[ext_resource type="PackedScene" uid="uid://djy77lxil3qom" path="res://scene/thing/button_upgrade.tscn" id="8_67myi"]
-[ext_resource type="Texture2D" uid="uid://b1rjtimabjc4b" path="res://image/menu.png" id="9_56nq2"]
-[ext_resource type="PackedScene" uid="uid://dop0cdprgrdk8" path="res://scene/window/menu.tscn" id="10_dab34"]
+[ext_resource type="Script" uid="uid://cvba3hxcrwg3b" path="res://script/window/menu.gd" id="1_5te7a"]
 
-[node name="Battle" type="Node2D"]
-script = ExtResource("1_cemns")
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5te7a")
 
-[node name="BattleHandler" type="Node" parent="."]
-script = ExtResource("2_8ijx4")
+[node name="Rect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 960.0
+offset_bottom = 520.0
 
-[node name="Field" type="Node2D" parent="."]
-texture_filter = 1
-position = Vector2(140, 120)
-scale = Vector2(1.25, 1.25)
+[node name="ButtonResume" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 280.0
+offset_right = 960.0
+offset_bottom = 360.0
+color = Color(1, 1, 0, 1)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Field"]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAABAAAAAAABAAAAAAABAAAAAAABAAEAAAAAAAAAAAABAAIAAAABAAAAAAABAAMAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAABAAAAAAACAAIAAAAAAAAAAAACAAMAAAABAAAAAAADAAAAAAABAAAAAAADAAEAAAAAAAAAAAADAAIAAAABAAAAAAADAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAABAAAAAAAFAAMAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAABAAAAAAAHAAAAAAABAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAABAAAAAAAHAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAABAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAABAAAAAAAJAAAAAAABAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAABAAAAAAAJAAMAAAAAAAAAAAA=")
-tile_set = ExtResource("3_rqpln")
-script = ExtResource("4_f01hf")
+[node name="ButtonExit" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 360.0
+offset_right = 960.0
+offset_bottom = 440.0
 
-[node name="Endpoint" type="Node2D" parent="Field"]
-script = ExtResource("5_1j3ci")
+[node name="ButtonQuit" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 440.0
+offset_right = 960.0
+offset_bottom = 520.0
+color = Color(1, 1, 0, 1)
 
-[node name="Spawn" type="Node2D" parent="Field"]
-script = ExtResource("6_jmskp")
-
-[node name="Player" type="Node2D" parent="."]
-
-[node name="Hand" type="Node2D" parent="Player"]
-
-[node name="Card2" parent="Player/Hand" instance=ExtResource("7_rkhxc")]
-position = Vector2(20, 580)
-
-[node name="Card3" parent="Player/Hand" instance=ExtResource("7_rkhxc")]
-position = Vector2(20, 580)
-
-[node name="Card4" parent="Player/Hand" instance=ExtResource("7_rkhxc")]
-position = Vector2(20, 580)
-
-[node name="ButtonUpgrade" parent="Player" instance=ExtResource("8_67myi")]
-position = Vector2(20, 580)
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="ButtonMenu" type="TextureRect" parent="UI"]
-offset_left = 1180.0
-offset_top = 20.0
-offset_right = 1260.0
-offset_bottom = 100.0
-texture = ExtResource("9_56nq2")
-
-[node name="Menu" parent="UI" instance=ExtResource("10_dab34")]
-visible = false
-
-[connection signal="gui_input" from="UI/ButtonMenu" to="BattleHandler" method="_on_button_menu_gui_input"]
+[connection signal="gui_input" from="ButtonResume" to="." method="_on_button_resume_gui_input"]
+[connection signal="gui_input" from="ButtonExit" to="." method="_on_button_exit_gui_input"]
+[connection signal="gui_input" from="ButtonQuit" to="." method="_on_button_quit_gui_input"]
