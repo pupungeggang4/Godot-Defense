@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://42qn7qxl13pj"]
+[gd_scene load_steps=16 format=4 uid="uid://42qn7qxl13pj"]
 
 [ext_resource type="TileSet" uid="uid://g5wo5xivwj85" path="res://res/tile_plain.tres" id="1_afp2b"]
 [ext_resource type="Script" uid="uid://cq24uf1nhbv0p" path="res://script/scene/battle.gd" id="1_ebedk"]
@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://kb6ne1lk13co" path="res://scene/thing/slot.tscn" id="7_bdn7b"]
 [ext_resource type="Script" uid="uid://ndm6rd6aqx3o" path="res://script/window/ui_lower.gd" id="11_5mh2w"]
 [ext_resource type="Theme" uid="uid://rrlgsc4app54" path="res://res/font_neodgm.tres" id="12_o18kk"]
+[ext_resource type="FontFile" uid="uid://bdemm0oewhlp4" path="res://font/neodgm.ttf" id="13_i5dg4"]
+
+[sub_resource type="Theme" id="Theme_ef046"]
+default_font = ExtResource("13_i5dg4")
+default_font_size = 32
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_ebedk")
@@ -45,22 +50,16 @@ position = Vector2(20, 580)
 [node name="Hand" type="Node2D" parent="Player"]
 
 [node name="Slot" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
-position = Vector2(376.0182, 682.92126)
 
 [node name="Slot2" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
-position = Vector2(376.0182, 682.92126)
 
 [node name="Slot3" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
-position = Vector2(376.0182, 682.92126)
 
 [node name="Slot4" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
-position = Vector2(376.0182, 682.92126)
 
 [node name="Slot5" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
-position = Vector2(376.0182, 682.92126)
 
 [node name="Slot6" parent="Player/Hand" instance=ExtResource("7_bdn7b")]
-position = Vector2(376.0182, 682.92126)
 
 [node name="Deck" type="Node2D" parent="Player"]
 visible = false
@@ -103,13 +102,23 @@ text = "Lv.1"
 
 [node name="TextEnergy" type="Label" parent="UI/UILower"]
 layout_mode = 0
-offset_left = 160.0
+offset_left = 200.0
 offset_top = 540.0
-offset_right = 200.0
-offset_bottom = 563.0
+offset_right = 312.0
+offset_bottom = 572.0
 theme = ExtResource("12_o18kk")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "0.0/0.0"
+
+[node name="TextLife" type="Label" parent="UI/UILower"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 540.0
+offset_right = 552.0
+offset_bottom = 572.0
+theme = SubResource("Theme_ef046")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "20/20"
 
 [node name="Menu" parent="UI" instance=ExtResource("7_6qw66")]
 visible = false

@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dop0cdprgrdk8"]
+[gd_scene load_steps=7 format=3 uid="uid://dop0cdprgrdk8"]
 
 [ext_resource type="Script" uid="uid://cvba3hxcrwg3b" path="res://script/window/menu.gd" id="1_5te7a"]
+[ext_resource type="FontFile" uid="uid://bdemm0oewhlp4" path="res://font/neodgm.ttf" id="2_ybvkr"]
+
+[sub_resource type="Theme" id="Theme_wuesw"]
+default_font = ExtResource("2_ybvkr")
+default_font_size = 32
+
+[sub_resource type="Theme" id="Theme_2u8nr"]
+default_font = ExtResource("2_ybvkr")
+default_font_size = 32
+
+[sub_resource type="Theme" id="Theme_xpsdp"]
+default_font = ExtResource("2_ybvkr")
+default_font_size = 32
+
+[sub_resource type="Theme" id="Theme_h5s5i"]
+default_font = ExtResource("2_ybvkr")
+default_font_size = 32
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,6 +35,16 @@ offset_top = 200.0
 offset_right = 960.0
 offset_bottom = 520.0
 
+[node name="TextPaused" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 220.0
+offset_right = 532.0
+offset_bottom = 252.0
+theme = SubResource("Theme_wuesw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Paused"
+
 [node name="ButtonResume" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 320.0
@@ -26,12 +53,32 @@ offset_right = 960.0
 offset_bottom = 360.0
 color = Color(1, 1, 0, 1)
 
+[node name="TextResume" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 300.0
+offset_right = 532.0
+offset_bottom = 332.0
+theme = SubResource("Theme_2u8nr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Resume"
+
 [node name="ButtonExit" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 320.0
 offset_top = 360.0
 offset_right = 960.0
 offset_bottom = 440.0
+
+[node name="TextExit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 380.0
+offset_right = 548.0
+offset_bottom = 412.0
+theme = SubResource("Theme_xpsdp")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Exit to title"
 
 [node name="ButtonQuit" type="ColorRect" parent="."]
 layout_mode = 0
@@ -40,6 +87,16 @@ offset_top = 440.0
 offset_right = 960.0
 offset_bottom = 520.0
 color = Color(1, 1, 0, 1)
+
+[node name="TextQuit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 460.0
+offset_right = 532.0
+offset_bottom = 492.0
+theme = SubResource("Theme_h5s5i")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Quit"
 
 [connection signal="gui_input" from="ButtonResume" to="." method="_on_button_resume_gui_input"]
 [connection signal="gui_input" from="ButtonExit" to="." method="_on_button_exit_gui_input"]
