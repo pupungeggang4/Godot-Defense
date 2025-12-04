@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxk0rvos7na1k"]
+
+[ext_resource type="Script" uid="uid://u4cb13n1jd33" path="res://script/window/window_start.gd" id="1_a2jkg"]
+[ext_resource type="FontFile" uid="uid://bdemm0oewhlp4" path="res://font/neodgm.ttf" id="2_27akh"]
+[ext_resource type="Theme" uid="uid://rrlgsc4app54" path="res://res/font_neodgm.tres" id="2_mw2gt"]
+
+[sub_resource type="Theme" id="Theme_srvpm"]
+default_font = ExtResource("2_27akh")
+default_font_size = 32
+
+[node name="WindowStart" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2jkg")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 1120.0
+offset_bottom = 680.0
+
+[node name="TextTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 60.0
+offset_right = 468.0
+offset_bottom = 92.0
+theme = SubResource("Theme_srvpm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Select start deck."
+
+[node name="ItemList" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 80.0
+
+[node name="Item0" type="ColorRect" parent="ItemList"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 120.0
+offset_right = 280.0
+offset_bottom = 360.0
+color = Color(1, 1, 0, 1)
+
+[node name="Item1" type="ColorRect" parent="ItemList"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 120.0
+offset_right = 600.0
+offset_bottom = 360.0
+color = Color(1, 1, 0, 1)
+
+[node name="Item2" type="ColorRect" parent="ItemList"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 120.0
+offset_right = 920.0
+offset_bottom = 360.0
+color = Color(1, 1, 0, 1)
+
+[node name="ButtonStart" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 560.0
+offset_right = 720.0
+offset_bottom = 640.0
+color = Color(1, 1, 0, 1)
+
+[node name="TextStart" type="Label" parent="."]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 580.0
+offset_right = 620.0
+offset_bottom = 603.0
+theme = ExtResource("2_mw2gt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "OK"
+
+[connection signal="gui_input" from="ButtonStart" to="." method="_on_button_start_gui_input"]
