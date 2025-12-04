@@ -13,3 +13,8 @@ func _on_button_exit_gui_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
             get_tree().quit()
+
+func _on_button_erase_gui_input(event: InputEvent) -> void:
+    if event is InputEventMouseButton:
+        if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+            GFunc.erase_data()

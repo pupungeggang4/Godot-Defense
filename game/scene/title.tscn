@@ -99,4 +99,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Quit Game"
 
 [connection signal="gui_input" from="UI/ButtonStart" to="." method="_on_button_start_gui_input"]
+[connection signal="gui_input" from="UI/ButtonErase" to="." method="_on_button_erase_gui_input"]
 [connection signal="gui_input" from="UI/ButtonExit" to="." method="_on_button_exit_gui_input"]
