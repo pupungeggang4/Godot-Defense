@@ -14,9 +14,10 @@ func _process(delta):
 func _on_button_start_gui_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-            GVar.state = 'battle'
+            if GVar.selected_start != -1:
+                GVar.state = 'battle'
 
 func _on_item_gui_input(event: InputEvent, emitter_node) -> void:
     if event is InputEventMouseButton:
         if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-            print(emitter_node.get_index())
+            GVar.selected_start = emitter_node.get_index()
