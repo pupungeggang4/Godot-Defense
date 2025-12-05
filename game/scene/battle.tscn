@@ -94,6 +94,8 @@ position = Vector2(20, 580)
 
 [node name="Card5" parent="Player/Deck" instance=ExtResource("6_p56j5")]
 
+[node name="Card6" parent="Player/Deck" instance=ExtResource("6_p56j5")]
+
 [node name="Discarded" type="Node2D" parent="Player"]
 position = Vector2(440, 540)
 
