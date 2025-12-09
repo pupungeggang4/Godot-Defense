@@ -28,3 +28,21 @@ func upgrade():
         energy_max += 2.0
         energy_upgrade += 2
         level_gen += 1
+
+func adventure_start(ID):
+    var node_deck_original = get_node('DeckOriginal')
+    for child in node_deck_original.get_children():
+        child.queue_free()
+        
+    for i in range(len(Data.deck[ID]['card'])):
+        var card = load('res://scene/thing/card.tscn').instantiate()
+        card.set_data(Data.deck[ID]['card'][i])
+        node_deck_original.add_child(card)
+        
+func battle_start():
+    var node_deck = get_node('Deck')
+    var node_deck_original = get_node('DeckOriginal')
+    for child in node_deck.get_children():
+        child.queue_free()
+    for child in node_deck_original.get_children():
+        node_deck.add_child(child.clone())

@@ -10,7 +10,7 @@ extends Node2D
 @onready var text_energy = get_node('TextEnergy')
 
 func _ready():
-    set_data(1)
+    pass
     
 func set_data(ID):
     var data = Data.card[ID].duplicate(true)
@@ -20,6 +20,16 @@ func set_data(ID):
     stat = data["stat"]
     weapon = data["weapon"]
     effect = data["effect"]
+    
+func clone():
+    var card = load('res://scene/thing/card.tscn').instantiate()
+    card.id = id
+    card.card_name = card_name
+    card.energy = energy
+    card.stat = stat.duplicate(true)
+    card.weapon = weapon
+    card.effect = effect
+    return card
     
 func _process(delta):
     text_energy.text = str(energy)
